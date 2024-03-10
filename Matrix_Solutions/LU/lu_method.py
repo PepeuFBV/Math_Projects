@@ -1,6 +1,6 @@
 import numpy as np
 
-def lu_method(matrix, solution):
+def lu_method(matrix, solution): # Also known as Crout's method
     # Ax = b
     # LUx = b
     # Ly = b
