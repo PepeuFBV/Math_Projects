@@ -7,8 +7,8 @@ from Gauss_Seidel.gaussseidel_method import gauss_seidel_method as solve_gs
 
 def main():
     # Usage
-    matrix = np.array([[2, 1, -1], [4, -1, 3], [1, 3, -2]])
-    solution = np.array([8, 9, 3])
+    matrix = np.array([[4, -1, 2],[-1, 5, -3],[2, -3, 6]])
+    solution = np.array([1, 2, 3])
 
     y = solve_lu(matrix, solution)
     x = solve_pm(matrix, solution)
