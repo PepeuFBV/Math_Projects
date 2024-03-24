@@ -1,5 +1,9 @@
 import rectangles as rectangles
 import trapezoids as trapezoids
+from Simpsons.a_third_simple import a_third_simple
+from Simpsons.a_third_repeated import a_third_repeated
+from Simpsons.three_eights_simple import three_eights_simple
+from Simpsons.three_eights_repeated import three_eights_repeated
 
 def main():
     
@@ -13,6 +17,10 @@ def main():
     print("Choose a method to calculate the integral of a function")
     print("1. Rectangle method")
     print("2. Trapezoidal method")
+    print("3. Simpson's 1/3 method (only 2 subintervals)")
+    print("4. Simpson's 1/3 method repeated")
+    print("5. Simpson's 3/8 method")
+    print("6. Simpson's 3/8 method repeated")
     print("0. Exit")
     print("--> ")
     choice = int(input())
@@ -22,11 +30,23 @@ def main():
             print(rectangles.rectangle_method(f, a, b, n))
         elif choice == 2:
             print(trapezoids.trapezoidal_method(f, a, b, n))
+        elif choice == 3:
+            print(a_third_simple(f, a, b))
+        elif choice == 4:
+            print(a_third_repeated(f, a, b, n))
+        elif choice == 5:
+            print(three_eights_simple(f, a, b, n))
+        elif choice == 6:
+            print(three_eights_repeated(f, a, b, n))
         else:
             print("Invalid input")
         print("Choose a method to calculate the integral of a function")
         print("1. Rectangle method")
         print("2. Trapezoidal method")
+        print("3. Simpson's 1/3 method (only 2 subintervals)")
+        print("4. Simpson's 1/3 method repeated")
+        print("5. Simpson's 3/8 method (only 3 subintervals)")
+        print("6. Simpson's 3/8 method repeated")
         print("0. Exit")
         print("--> ")
         choice = int(input())
