@@ -5,6 +5,7 @@ from Simpsons.a_third_repeated import a_third_repeated
 from Simpsons.three_eights_simple import three_eights_simple
 from Simpsons.three_eights_repeated import three_eights_repeated
 from gaussian_quadrature import gaussian_quadrature
+from euler_method import euler_method
 
 def main():
     
@@ -21,11 +22,12 @@ def main():
     print("5. Simpson's 3/8 method")
     print("6. Simpson's 3/8 method repeated")
     print("7. Gaussian Quadrature")
+    print("8. Euler's Method")
     print("0. Exit")
     print("--> ")
     choice = int(input())
     
-    SUBINTERVALS_PROMPT = "Enter the number of subintervals"
+    SUBINTERVALS_PROMPT = "Enter the number of subintervals: "
 
     while True:
         if choice == 1:
@@ -52,6 +54,16 @@ def main():
             print(three_eights_repeated(f, a, b, n))
         elif choice == 7:
             print(gaussian_quadrature(f, a, b))
+        elif choice == 8:
+            print("Enter the initial value of x (x0)")
+            x0 = float(input())
+            print("Enter the initial value of y (y0)")
+            y0 = float(input())
+            print(SUBINTERVALS_PROMPT)
+            n = int(input())
+            print("Enter the step size")
+            h = float(input())
+            print(euler_method(f_derivative, x0, y0, h, n))            
         else:
             print("Invalid input")
         print("Choose a method to calculate the integral of a function")
@@ -62,6 +74,7 @@ def main():
         print("5. Simpson's 3/8 method (only 3 subintervals)")
         print("6. Simpson's 3/8 method repeated")
         print("7. Gaussian Quadrature")
+        print("8. Euler's Method")
         print("0. Exit")
         print("--> ")
         choice = int(input())
@@ -72,6 +85,9 @@ def main():
 
 def f(x):
     return x
+
+def f_derivative(x):
+    return 1
 
 if __name__ == "__main__":
     main()
